@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const turmaRoutes = require('./routes/turmaRoutes');
+const pesagemRoutes = require('./routes/pesagemRoutes');
 const { errorHandler, notFoundHandler } = require('./middlewares/errorHandler');
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use('/api/turmas', turmaRoutes);
+app.use('/api/pesagens', pesagemRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
